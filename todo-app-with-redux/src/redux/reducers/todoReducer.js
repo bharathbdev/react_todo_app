@@ -21,7 +21,7 @@ const todos = (state = initialState, action) => {
         case TOGGLETODO:
             const index = state.findIndex((x) => x.id == action.payload.id);
              state[index]['completed'] = action.payload.completed;
-             return state
+             return [...state]
         case REMOVETODO:
             return state.filter((x) => x.id != action.payload.id);
         default:
